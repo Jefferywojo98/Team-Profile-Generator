@@ -10,9 +10,7 @@ ___
 * [Usage](#usage)
 * [Technologies](#technologies)
 * [Screenshots](#screenshots)
-* [Links](#links)
-* [Contact](#contact)
-* [License](#license)
+* [walkthough](#Walkthrough)
 <br><br>
 ## Description <br>
 ```
@@ -74,6 +72,6 @@ Inspire
 ![Screenshot](image/screencapture-127-0-0-1-5500-dist-index-html-2021-10-05-21_46_52.png)
 
 
-## Walkthrough video:
+## Walkthrough:
 
-! [walkthough](https://watch.screencastify.com/v/ljrWFO5orphp7MDRehEp)
+![walkthough](https://watch.screencastify.com/v/ljrWFO5orphp7MDRehEp)
