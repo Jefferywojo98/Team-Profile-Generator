@@ -1,4 +1,3 @@
-
 const generateHTML = require('./src/generateHTML');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Enginner');

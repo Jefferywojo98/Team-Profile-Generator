@@ -1,10 +1,10 @@
 const generateManager = function (manager) {
     return `
-    <div class="col-4>
-        <div class="card h-75">
-            <div class="card-header">
+    <div class="col-4 mt-4">
+        <div class="card h-100">
+            <div class="card-header bg-info text-white">
                 <h3>${manager.name}</h3>
-                <h4>Manager</h4><i>content_paste</i>
+                <h4>Manager</h4><i class="material-icons">content_paste</i>
             </div>
             <div class="card-body">
                 <p class="id">ID: ${manager.id}</p>
@@ -15,15 +15,13 @@ const generateManager = function (manager) {
     </div>
     `;
 }
-
-// create Engineer card
 const generateEngineer = function (engineer) {
     return `
-    <div class="col-4>
-        <div class="card h-75>
-            <div class="card-header">
+    <div class="col-4 mt-4">
+        <div class="card h-100">
+            <div class="card-header bg-info text-white">
                 <h3>${engineer.name}</h3>
-                <h4>Engineer</h4><i>laptop_mac</i>
+                <h4>Engineer</h4><i class="material-icons">laptop_mac</i>
             </div>
             <div class="card-body">
                 <p class="id">ID: ${engineer.id}</p>
@@ -34,15 +32,13 @@ const generateEngineer = function (engineer) {
     </div>
     `
 }
-
-// create Intern card 
 const generateIntern = function (intern) {
     return `
-    <div class="col-4>
+    <div class="col-4 mt-4">
         <div class="card h-100">
-            <div class="card-header">
+            <div class="card-header bg-info text-white">
                 <h3>${intern.name}</h3>
-                <h4>Intern</h4><i>assignment_ind</i>
+                <h4>Intern</h4><i class="material-icons">assignment_ind</i>
             </div>
             <div class="card-body">
                 <p class="id">ID: ${intern.id}</p>
@@ -52,34 +48,23 @@ const generateIntern = function (intern) {
     </div>
 </div>
     `
-};
-
-// push array to page 
+}; 
 generateHTML = (data) => {
-
-    // array for cards 
     pageArray = []; 
 
     for (let i = 0; i < data.length; i++) {
         const employee = data[i];
         const role = employee.getRole(); 
-
-
-        // call manager function
         if (role === 'Manager') {
             const managerCard = generateManager(employee);
 
             pageArray.push(managerCard);
         }
-
-        // call engineer function
         if (role === 'Engineer') {
             const engineerCard = generateEngineer(employee);
 
             pageArray.push(engineerCard);
         }
-
-        // call intern function 
         if (role === 'Intern') {
             const internCard = generateIntern(employee);
 
@@ -87,8 +72,6 @@ generateHTML = (data) => {
         }
         
     }
-
-    // joining strings 
     const employeeCards = pageArray.join('')
 
     // return to generated page
@@ -96,8 +79,6 @@ generateHTML = (data) => {
     return generateTeam;
 
 }
-
-// generate html page 
 const generateTeamPage = function (employeeCards) {   
   return`
   <!DOCTYPE html>
@@ -114,13 +95,14 @@ const generateTeamPage = function (employeeCards) {
   </head>
   <body>
       <header>
-          <nav>
-              <span class="navbar-brand mb-0 h1 text-center">Team Profile</span>
+          <nav class="navbar" id="navbar">
+              <span class="navbar-brand mb-0 h1 w-100 text-center bg-info text-white" id="navbar-text">Team Profile</span>
           </nav>
       </header>
       <main>
           <div class="container">
-              <div class="row justify-content-center">
+              <div class="row justify-content-center" id="team-cards">
+                  <!--Team Cards-->
                   ${employeeCards}
               </div>
           </div>
@@ -133,6 +115,4 @@ const generateTeamPage = function (employeeCards) {
   </html>
 `;
 }
-
-// export to index
-module.exports = generateHTML; 
+module.exports = generateHTML;
